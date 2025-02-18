@@ -29,7 +29,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public BaseResponse<AccountDto> updateAccount(AccountDto accountDto) {
-        var account = accountRepository.findById(accountDto.getId()).orElseThrow(() -> new NullPointerException());
+        var account = accountRepository.findById(accountDto.getId()).orElseThrow(NullPointerException::new);
         BeanUtils.copyProperties(accountDto, account);
         var accountUpdated = accountRepository.save(account);
         BeanUtils.copyProperties(accountUpdated, accountDto);

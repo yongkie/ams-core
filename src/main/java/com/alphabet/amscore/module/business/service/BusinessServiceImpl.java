@@ -28,7 +28,7 @@ public class BusinessServiceImpl implements BusinessService {
 
     @Override
     public BaseResponse<BusinessDto> updateBusiness(BusinessDto businessDto) {
-        var business = businessRepository.findById(businessDto.getId()).orElseThrow(() -> new NullPointerException());
+        var business = businessRepository.findById(businessDto.getId()).orElseThrow(NullPointerException::new);
         BeanUtils.copyProperties(businessDto, business);
         var businessSaved = businessRepository.save(business);
         BeanUtils.copyProperties(businessSaved, businessDto);

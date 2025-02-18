@@ -1,7 +1,6 @@
 package com.alphabet.amscore.module.account.service;
 
 import com.alphabet.amscore.module.account.model.AccountDto;
-import com.alphabet.amsdocument.entity.Account;
 import com.alphabet.commons.module.response.base.BaseResponse;
 
 import java.util.List;
